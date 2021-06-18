@@ -1,6 +1,7 @@
 // require the discord.js module
 const Discord = require('discord.js');
 
+const config = require('./config.json');
 // create a new Discord client
 const client = new Discord.Client();
 
@@ -20,4 +21,4 @@ client.on('message', message => {
 	}
 });
 // login to Discord with your app's token
-client.login('your-token-goes-here');
+client.login('config.token');
