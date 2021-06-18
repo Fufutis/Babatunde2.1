@@ -1,0 +1,24 @@
+{
+  "name": "babatunde",
+  "version": "2.1.0",
+  "description": "BABATUNDE IS BACK AND STRONGER",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git remote -v"
+  },
+  "keywords": [
+    "baba"
+  ],
+  "author": "Fufutis",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.28.0"
+  }
+}
