@@ -27,8 +27,6 @@ client.on('message', message => {
 		message.channel.send(`YO NAME IS ${message.author.username}`);
 	}
 });
-<<<<<<< Updated upstream
-=======
 // Create an event listener for messages
 client.on('message', message => {
 	// If the message is "what is my avatar" replaced it with showme me
@@ -37,6 +35,5 @@ client.on('message', message => {
 		message.reply(message.author.displayAvatarURL());
 	}
 });
->>>>>>> Stashed changes
 // login to Discord with your app's token
 client.login(token);
