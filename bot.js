@@ -14,16 +14,16 @@ client.on('message', message => {
 	console.log(message.content);
 });*/
 client.on('message', message => {
-	if (message.content === `${prefix}ping`) {
+	if (message.content === `${prefix} ping`) {
 		message.channel.send('Pong');
 	}
-	else if (message.content === `${prefix}beep`) {
+	else if (message.content === `${prefix} beep`) {
 		message.channel.send('Boop');
 	}
-	else if (message.content === `${prefix}server`) {
+	else if (message.content === `${prefix} server`) {
 		message.channel.send(`DIS IS DA ${message.guild.name} DA ONE OF A KIND`);
 	}
-	else if (message.content === `${prefix}name`) {
+	else if (message.content === `${prefix} name`) {
 		message.channel.send(`YO NAME IS ${message.author.username}`);
 	}
 });
