@@ -26,6 +26,9 @@ client.on('message', message => {
 	else if (message.content === `${prefix} name`) {
 		message.channel.send(`YO NAME IS ${message.author.username}`);
 	}
+	else if (message.content === `${prefix} roll`) {
+		message.channel.send(`hmm u got  ${Math.floor(Math.random() * 100) + 1}`);
+	}
 });
 // Create an event listener for messages
 client.on('message', message => {
