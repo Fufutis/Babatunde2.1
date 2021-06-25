@@ -30,6 +30,9 @@ client.on('message', message => {
 	case `${prefix} roll`:
 		message.channel.send(`1hmm u got  ${Math.floor(Math.random() * 100) + 1}`);
 		break;
+	case `${prefix} showme me`:
+		message.reply(message.author.displayAvatarURL());
+		break;
 	default:
 		console.log('i skipped a msg');
 	}
