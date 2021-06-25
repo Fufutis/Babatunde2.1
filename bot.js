@@ -27,7 +27,7 @@ client.on('message', message => {
     [break;]
 }
 */
-client.once('message', message => {
+client.on('message', message => {
 	switch (message.content) {
 	case `${prefix} ping`:
 		message.channel.send('1Poong');
