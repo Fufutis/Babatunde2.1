@@ -16,19 +16,19 @@ client.on('message', message => {
 client.on('message', message => {
 	switch (message.content) {
 	case `${prefix} ping`:
-		message.channel.send('1Poong');
+		message.channel.send('Poong');
 		break;
 	case `${prefix} beep`:
-		message.channel.send('1boop');
+		message.channel.send('boop');
 		break;
 	case `${prefix} server`:
-		message.channel.send(`1DIS IS DA ${message.guild.name} DA ONE OF A KIND`);
+		message.channel.send(`DIS IS DA ${message.guild.name} DA ONE OF A KIND`);
 		break;
 	case `${prefix} name`:
-		message.channel.send(`1YO NAME IS ${message.author.username}`);
+		message.channel.send(`YO NAME IS ${message.author.username}`);
 		break;
 	case `${prefix} roll`:
-		message.channel.send(`1hmm u got  ${Math.floor(Math.random() * 100) + 1}`);
+		message.channel.send(`hmm u got  ${Math.floor(Math.random() * 100) + 1}`);
 		break;
 	case `${prefix} showme me`:
 		message.reply(message.author.displayAvatarURL());
