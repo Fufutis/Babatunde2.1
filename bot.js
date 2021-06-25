@@ -13,20 +13,6 @@ client.once('ready', () => {
 client.on('message', message => {
 	console.log(message.content);
 });*/
-
-/* switch (expression) {
-  case label_1:
-    statements_1
-    [break;]
-  case label_2:
-    statements_2
-    [break;]
-    …
-  default:
-    statements_def
-    [break;]
-}
-*/
 client.on('message', message => {
 	switch (message.content) {
 	case `${prefix} ping`:
@@ -48,24 +34,6 @@ client.on('message', message => {
 		console.log('i skipped a msg');
 	}
 });
-/*
-client.on('message', message => {
-	if (message.content === `${prefix} ping`) {
-		message.channel.send('Pong');
-	}
-	else if (message.content === `${prefix} beep`) {
-		message.channel.send('Boop');
-	}
-	else if (message.content === `${prefix} server`) {
-		message.channel.send(`DIS IS DA ${message.guild.name} DA ONE OF A KIND`);
-	}
-	else if (message.content === `${prefix} name`) {
-		message.channel.send(`YO NAME IS ${message.author.username}`);
-	}
-	else if (message.content === `${prefix} roll`) {
-		message.channel.send(`hmm u got  ${Math.floor(Math.random() * 100) + 1}`);
-	}
-});*/
 // Create an event listener for messages
 client.on('message', message => {
 	// If the message is "what is my avatar" replaced it with showme me
