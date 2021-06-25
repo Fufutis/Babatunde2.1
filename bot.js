@@ -37,6 +37,7 @@ client.on('message', message => {
 		console.log('i skipped a msg');
 	}
 });
+/*
 // Create an event listener for messages
 client.on('message', message => {
 	// If the message is "what is my avatar" replaced it with showme me
@@ -44,6 +45,6 @@ client.on('message', message => {
 		// Send the user's avatar URL
 		message.reply(message.author.displayAvatarURL());
 	}
-});
+});*/
 // login to Discord with your app's token
 client.login(token);
