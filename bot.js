@@ -37,6 +37,10 @@ client.on('message', message => {
 		console.log('i skipped a msg');
 	}
 });
+const command = require('./commands');
+command(client, ['ping', 'lag', 'latency'], message => {
+	message.channel.send('poing');
+});
 /*
 // Create an event listener for messages
 client.on('message', message => {

@@ -1,2 +1,3 @@
 learn module.export
 replace things with export (12.16pm 26/6/2021)
+make ping/latency command, commands
