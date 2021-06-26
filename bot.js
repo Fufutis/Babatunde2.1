@@ -19,7 +19,7 @@ client.on('message', message => {
 		message.channel.send('Poong');
 		break;
 	case `${prefix} test`:
-		message.reply('Test successful');
+		message.reply('Test successfully done');
 		break;
 	case `${prefix} beep`:
 		message.channel.send('boop');
