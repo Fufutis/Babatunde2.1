@@ -18,6 +18,9 @@ client.on('message', message => {
 	case `${prefix} ping`:
 		message.channel.send('Poong');
 		break;
+	case `${prefix} test`:
+		message.reply('Test successful');
+		break;
 	case `${prefix} beep`:
 		message.channel.send('boop');
 		break;
