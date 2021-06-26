@@ -9,7 +9,7 @@ module.exports = (client, aliases, callback) => {
 		aliases.forEach(alias => {
 			const command = `${prefix}${alias}`;
 
-			if (content.startwith(`${command} `) || content === command) {
+			if (content.startsWith(`${command} `) || content === command) {
 				console.log(`running the command ${command}`);
 				callback(message);
 			}
