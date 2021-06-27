@@ -1,54 +1,39 @@
-// require the discord.js module
 const Discord = require('discord.js');
+const fs = require('fs');
 const { prefix, token } = require('./config.json');
-// create a new Discord client
-const client = new Discord.Client();
 
-// when the client is ready, run this code
-// this event will only trigger one time after logging in
+const client = new Discord.Client();
+client.commands = new Discord.Collection();
+
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+	// set a new item in the Collection
+	// with the key as the command name and the value as the exported module
+	client.commands.set(command.name, command);
+}
+// ================
 client.once('ready', () => {
 	console.log('Ready!');
 });
-/*
+// ================
 client.on('message', message => {
-	console.log(message.content);
-});*/
-client.on('message', message => {
-	switch (message.content) {
-	case `${prefix} ping`:
-		message.channel.send('Poong');
-		break;
-	case `${prefix} beep`:
-		message.channel.send('boop');
-		break;
-	case `${prefix} server`:
-		message.channel.send(`DIS IS DA ${message.guild.name} DA ONE OF A KIND`);
-		break;
-	case `${prefix} name`:
-		message.channel.send(`YO NAME IS ${message.author.username}`);
-		break;
-	case `${prefix} roll`:
-		message.channel.send(`hmm u got  ${Math.floor(Math.random() * 100) + 1}`);
-		break;
-	case `${prefix} showme me`:
-		message.reply(message.author.displayAvatarURL());
-		break;
-	default:
-		console.log('i skipped a msg');
+	if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+	const args = message.content.slice(prefix.length).trim().split(/ +/);
+	const command = args.shift().toLowerCase();
+
+
+	if (!client.commands.has(command)) return;
+
+	try {
+		client.commands.get(command).execute(message, args);
+	}
+	catch (error) {
+		console.error(error);
+		message.reply('there was an error trying to execute that command!');
 	}
 });
-const command = require('./commands');
-command(client, ['ping', 'lag', 'latency'], message => {
-	message.channel.send('poing');
-});
-/*
-// Create an event listener for messages
-client.on('message', message => {
-	// If the message is "what is my avatar" replaced it with showme me
-	if (message.content === 'showme me') {
-		// Send the user's avatar URL
-		message.reply(message.author.displayAvatarURL());
-	}
-});*/
-// login to Discord with your app's token
+// ================
 client.login(token);
